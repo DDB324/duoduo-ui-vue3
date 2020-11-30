@@ -1,15 +1,15 @@
 <template>
-  <div>hi</div>
-  <Ddb></Ddb>
+  <div>导航栏 |
+    <router-link to="/">Ddb</router-link> |
+    <router-link to="/2">Ddb2</router-link>
+  </div>
+  <hr>
+  <router-view/>
 </template>
 
 <script>
-import Ddb from './components/Ddb.vue'
 
 export default {
   name: 'App',
-  components: {
-    Ddb
-  }
 }
 </script>
