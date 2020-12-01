@@ -33,18 +33,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-aside{
-  background:lightblue;
-  position:fixed;
-  top:0;
-  left:0;
-  padding:16px;
-  h2{
-    margin-bottom:4px;
+aside {
+  background: lightblue;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 70px 16px 16px;
+
+  h2 {
+    margin-bottom: 4px;
   }
-  ol{
-    li{
-      padding:4px 0;
+
+  ol {
+    li {
+      padding: 4px 0;
     }
   }
 }
