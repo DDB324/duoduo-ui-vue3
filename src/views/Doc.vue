@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div class="topnav">
-      <div class="logo"></div>
-      <div class="menu"></div>
-    </div>
+    <Topnav/>
     <div class="banner">
       <h1>duoduo-ui</h1>
       <h2>一个简单的UI框架</h2>
@@ -14,3 +11,11 @@
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import Topnav from '../components/Topnav.vue';
+
+export default {
+  components: {Topnav}
+};
+</script>
