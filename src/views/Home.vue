@@ -5,8 +5,8 @@
       <h1>duoduo-ui</h1>
       <h2>一个简单的UI框架</h2>
       <p class="actions">
-        <a href="">Github</a>
-        <a href="">开始</a>
+        <a href="https://github.com/DDB324/duoduo-ui-vue3">Github</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
