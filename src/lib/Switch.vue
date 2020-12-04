@@ -26,14 +26,31 @@ button {
   width: $h*2;
   border-radius: $h/2;
   border: none;
-  background: blue;
+  background: #bfbfbf;
 
   &:focus {
     outline: none
   }
 
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    span {
+      width: $h2 + 4px;
+    }
+  }
+
+  &.checked:active {
+    span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
+  }
+
   &.checked {
-    background: gray;
+    background: #1890ff;
 
     span {
       left: calc(100% - #{$h2} - 2px);
@@ -48,7 +65,7 @@ button {
     border-radius: $h2/2;
     top: 2px;
     left: 2px;
-    transition: left 250ms;
+    transition: all 250ms;
   }
 }
 </style>
