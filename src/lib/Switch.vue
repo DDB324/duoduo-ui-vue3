@@ -27,6 +27,10 @@ button {
   border: none;
   background: blue;
 
+  &:focus {
+    outline: none
+  }
+
   &.checked {
     background: gray;
 
@@ -43,6 +47,7 @@ button {
     border-radius: $h2/2;
     top: 2px;
     left: 2px;
+    transition: left 250ms;
   }
 }
 </style>
