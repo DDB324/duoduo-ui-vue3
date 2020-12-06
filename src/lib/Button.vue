@@ -1,6 +1,6 @@
 <template>
   <div @click="onClick">
-    <button @focus="onFocus">
+    <button v-bind="rest">
       <slot></slot>
     </button>
   </div>
@@ -10,8 +10,8 @@
 export default {
   inheritAttrs: false,
   setup(props, context) {
-    const {onClick, onFocus} = context.attrs;
-    return {onClick, onFocus};
+    const {onClick, ...rest} = context.attrs;
+    return {onClick, rest};
   }
 };
 </script>
