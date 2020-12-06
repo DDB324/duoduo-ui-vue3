@@ -2,8 +2,7 @@
   <div>Button 示例</div>
   <h1>示例1</h1>
   <Button @click="onClick"
-          @focus="onClick"
-          @mouseover="onClick">你好
+          @focus="onFocus">你好
   </Button>
 </template>
 
@@ -16,9 +15,12 @@ export default {
   },
   setup() {
     const onClick = () => {
-      console.log('hi');
+      console.log('onClick');
     };
-    return {onClick};
+    const onFocus = () => {
+      console.log('onFocus');
+    };
+    return {onClick, onFocus};
   },
 };
 </script>
