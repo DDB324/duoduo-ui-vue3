@@ -2,7 +2,10 @@
   <div>Button 示例</div>
   <h1>示例1</h1>
   <Button @click="onClick"
-          @focus="onFocus">你好
+          @focus="onFocus"
+          :level="true"
+          disabled
+          readonly>你好
   </Button>
 </template>
 
