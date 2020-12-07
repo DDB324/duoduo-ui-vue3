@@ -1,10 +1,12 @@
 <template>
-  <button class="duoduo-button" :class="`duoduo-theme-${theme}`">
+  <button class="duoduo-button" :class="classes">
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts">
+import {computed} from 'vue';
+
 export default {
   inheritAttrs: false,
   props: {
@@ -12,7 +14,22 @@ export default {
       type: String,
       default: 'button'
     },
+    size: {
+      type: String,
+      default: 'normal'
+    }
   },
+  setup(props) {
+    const {theme, size} = props;
+    const classes = computed(() => {
+          return {
+            [`duoduo-theme-${theme}`]: theme,
+            [`duoduo-size-${size}`]: size,
+          };
+        }
+    );
+    return {classes};
+  }
 };
 </script>
 
@@ -61,15 +78,27 @@ $radius: 4px;
     &:hover, &:focus {
       color: lighten($blue, 10%)
     }
+  }
 
-    &.duoduo-theme-text {
-      border-color: transparent;
-      box-shadow: none;
-      color: inherit;
+  &.duoduo-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
 
-      &:hover, &:focus {
-        color: lighten(white, 5%)
-      }
+    &:hover, &:focus {
+      color: lighten(white, 5%)
+    }
+  }
+  &.duoduo-theme-button{
+    &.duoduo-size-big{
+      font-size:24px;
+      height:48px;
+      padding:0 16px;
+    }
+    &.duoduo-size-small{
+      font-size:12px;
+      height:20px;
+      padding:0 4px;
     }
   }
 }
