@@ -1,5 +1,5 @@
 <template>
-  <button class="duoduo-button" :class="classes">
+  <button class="duoduo-button" :class="classes" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
@@ -21,6 +21,10 @@ export default {
     level: {
       type: String,
       default: 'normal'
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
@@ -45,6 +49,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .duoduo-button {
   height: $h;
   border-radius: $radius;
@@ -133,8 +138,8 @@ $red: red;
     }
   }
 
-  &.gulu-theme-link {
-    &.gulu-level-danger {
+  &.duoduo-theme-link {
+    &.duoduo-level-danger {
       color: $red;
 
       &:hover, &:focus {
@@ -143,8 +148,8 @@ $red: red;
     }
   }
 
-  &.gulu-theme-text {
-    &.gulu-level-main {
+  &.duoduo-theme-text {
+    &.duoduo-level-main {
       color: $blue;
 
       &:hover, &:focus {
@@ -152,12 +157,30 @@ $red: red;
       }
     }
 
-    &.gulu-level-danger {
+    &.duoduo-level-danger {
       color: $red;
 
       &:hover, &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+
+  &.duoduo-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+
+  &.duoduo-theme-link, &.duoduo-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
