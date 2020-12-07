@@ -1,5 +1,7 @@
 <template>
-  <button @click="toggle" :class="{checked:value}"><span></span></button>
+  <button class="duoduo-switch" @click="toggle" :class="{'duoduo-checked':value}">
+    <span></span>
+  </button>
 </template>
 
 <script lang="ts">
@@ -17,10 +19,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.duoduo-switch {
   position: relative;
   height: $h;
   width: $h*2;
@@ -42,14 +44,14 @@ button {
     }
   }
 
-  &.checked:active {
+  &.duoduo-checked:active {
     span {
       width: $h2 + 4px;
       margin-left: -4px;
     }
   }
 
-  &.checked {
+  &.duoduo-checked {
     background: #1890ff;
 
     span {
