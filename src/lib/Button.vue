@@ -1,5 +1,6 @@
 <template>
   <button class="duoduo-button" :class="classes" :disabled="disabled">
+    <span class="duoduo-loadingIndicator" v-if="loading"></span>
     <slot></slot>
   </button>
 </template>
@@ -8,7 +9,6 @@
 import {computed} from 'vue';
 
 export default {
-  inheritAttrs: false,
   props: {
     theme: {
       type: String,
@@ -23,6 +23,10 @@ export default {
       default: 'normal'
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
       type: Boolean,
       default: false
     }
@@ -183,5 +187,21 @@ $grey: grey;
       color: $grey;
     }
   }
+
+  .duoduo-loadingIndicator {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style:solid;
+    border-width:2px;
+    margin-right:4px;
+    animation: duoduo-spin infinite 1s linear;
+  }
+}
+@keyframes duoduo-spin {
+  0%{transform: rotate(0deg)}
+  100%{transform: rotate(360deg)}
 }
 </style>

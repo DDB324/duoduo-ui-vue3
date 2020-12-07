@@ -1,7 +1,7 @@
 <template>
   <div>Button 示例</div>
   <h1>示例1</h1>
-  <Button>默认button</Button>
+  <Button @click="onClick">默认button</Button>
   <Button theme="link">link</Button>
   <Button theme="text">text</Button>
   <h1>示例2</h1>
@@ -42,6 +42,11 @@
     <Button theme="link" disabled>禁用链接按钮</Button>
     <Button theme="text" disabled>禁用文本按钮</Button>
   </div>
+  <h1>示例5</h1>
+  <div>
+    <Button loading>加载中按钮</Button>
+    <Button>加载完毕</Button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -52,7 +57,10 @@ export default {
     Button
   },
   setup() {
-    return {};
+    const onClick = () => {
+      console.log('hi');
+    };
+    return {onClick};
   },
 };
 </script>
