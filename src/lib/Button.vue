@@ -89,17 +89,17 @@ $radius: 4px;
       color: lighten(white, 5%)
     }
   }
-  &.duoduo-theme-button{
-    &.duoduo-size-big{
-      font-size:24px;
-      height:48px;
-      padding:0 16px;
-    }
-    &.duoduo-size-small{
-      font-size:12px;
-      height:20px;
-      padding:0 4px;
-    }
+
+  &.duoduo-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+
+  &.duoduo-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>
