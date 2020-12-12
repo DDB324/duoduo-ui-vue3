@@ -56,25 +56,45 @@ $border-color: #d9d9d9;
       font-size: 20px;
       padding: 12px 16px;
       border-bottom: 1px solid $border-color;
-      display:flex;
+      display: flex;
       justify-content: space-between;
       align-items: center;
 
       .duoduo-dialog-close {
-        border: 1px solid red;
+        position: relative;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
 
+        &::before, &::after {
+          content: '';
+          display: inline-block;
+          height: 1px;
+          width: 100%;
+          background: black;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+        }
+
+        &::before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
       }
     }
 
     main {
-
+      padding: 12px 16px;
     }
 
     footer {
-      border: 1px solid blue;
-      display: flex;
-      justify-content: flex-end;
-
+      border-top: 1px solid $border-color;
+      padding: 12px 16px;
+      text-align: right;
     }
   }
 }
