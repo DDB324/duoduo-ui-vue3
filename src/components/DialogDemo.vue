@@ -3,7 +3,15 @@
   <div>Dialog 示例</div>
   <h1>示例1</h1>
   <Button @click="toggle">展示Dialog</Button>
-  <Dialog v-model:visible="x" :ok="f1" :cancel="f2" :close-on-click-overlay="false"></Dialog>
+  <Dialog v-model:visible="x" :ok="f1" :cancel="f2" :close-on-click-overlay="false">
+    <template v-slot:title>
+      <strong>加粗的标题</strong>
+    </template>
+    <template v-slot:content>
+      <strong>hi</strong>
+      <div>hi2</div>
+    </template>
+  </Dialog>
 </template>
 
 <script lang="ts">
@@ -27,7 +35,7 @@ export default {
     const f2 = () => {
 
     };
-    return {x, toggle,f1,f2};
+    return {x, toggle, f1, f2};
   }
 };
 </script>
