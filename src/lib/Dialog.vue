@@ -1,20 +1,22 @@
 <template>
   <template v-if="visible">
-    <div class="duoduo-dialog-overlay" @click="onClickOverlay"></div>
-    <div class="duoduo-dialog-wrapper">
-      <div class="duoduo-dialog">
-        <header>
-          <slot name="title"/>
-          <span class="duoduo-dialog-close" @click="close"></span></header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Button level="main" @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="duoduo-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="duoduo-dialog-wrapper">
+        <div class="duoduo-dialog">
+          <header>
+            <slot name="title"/>
+            <span class="duoduo-dialog-close" @click="close"></span></header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button level="main" @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
@@ -56,7 +58,7 @@ export default {
       }
     };
     const cancel = () => {
-      props.cancel();
+      props.cancel?.();
       context.emit('cancel');
       close();
     };
