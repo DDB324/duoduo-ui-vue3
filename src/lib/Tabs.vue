@@ -4,7 +4,20 @@
   </div>
 </template>
 <script lang="ts">
-export default {};
+import Tab from './Tab.vue';
+
+export default {
+  setup(props, context) {
+    const defaults = context.slots.default();
+    // console.log(defaults);
+    defaults.forEach((tag) => {
+      if (tag.type !== Tab) {
+        throw new Error('Tabs子标签必须是Tab');
+      }
+    });
+    return {defaults};
+  }
+};
 </script>
 
 <style>

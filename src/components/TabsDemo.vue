@@ -2,7 +2,7 @@
   <div class="tabsDemo">
     <h1>示例1</h1>
     <Tab>
-      <Tabs title="导航1">内容1</Tabs>
+      <div title="导航1">内容1</div>
       <Tabs title="导航2">内容2</Tabs>
     </Tab>
   </div>
