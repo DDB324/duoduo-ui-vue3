@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {ref, onMounted, onUpdated} from 'vue';
+import {ref, watchEffect} from 'vue';
 
 export default {
   props: {
@@ -33,14 +33,16 @@ export default {
     const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const nav = ref<HTMLDivElement>(null);
-    const setIndicator = () => {
-      const {width, left} = selectedItem.value.getBoundingClientRect();
-      const {left: left2} = nav.value.getBoundingClientRect();
-      indicator.value.style.width = width + 'px';
-      indicator.value.style.left = `${left - left2}px`;
-    };
-    onMounted(setIndicator);
-    onUpdated(setIndicator);
+    watchEffect(() => {
+          const {width, left} = selectedItem.value.getBoundingClientRect();
+          const {left: left2} = nav.value.getBoundingClientRect();
+          indicator.value.style.width = width + 'px';
+          indicator.value.style.left = `${left - left2}px`;
+        },
+        {
+          flush: 'post'
+        }
+    );
     const select = (title: string) => {
       context.emit('update:selected', title);
     };
