@@ -1,13 +1,15 @@
 <template>
   <div class=" duoduo-tabs">
-    <div class=" duoduo-tabs-nav">
+    <div class=" duoduo-tabs-nav" ref="nav">
       <div class=" duoduo-tabs-nav-item"
            v-for="(t,index) in titles" :key="index"
+           :ref="el => { if (el) navItems[index] = el }"
            @click="select(t)"
            :class="{selected:t === selected}">
         {{ t }}
       </div>
-      <div class=" duoduo-tabs-nav-indicator"></div>
+      <div class=" duoduo-tabs-nav-indicator"
+           ref="indicator"></div>
     </div>
     <div class=" duoduo-tabs-content">
       <component class=" duoduo-tabs-content-item"
@@ -19,6 +21,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
+import {ref, onMounted, onUpdated} from 'vue';
 
 export default {
   props: {
@@ -27,6 +30,19 @@ export default {
     }
   },
   setup(props, context) {
+    const navItems = ref<HTMLDivElement[]>([]);
+    const indicator = ref<HTMLDivElement>(null);
+    const nav = ref<HTMLDivElement>(null);
+    const setIndicator = () => {
+      const result = navItems.value.filter(
+          item => item.classList.contains('selected'))[0];
+      const {width, left} = result.getBoundingClientRect();
+      const {left: left2} = nav.value.getBoundingClientRect();
+      indicator.value.style.width = width + 'px';
+      indicator.value.style.left = `${left - left2}px`;
+    };
+    onMounted(setIndicator);
+    onUpdated(setIndicator);
     const select = (title: string) => {
       context.emit('update:selected', title);
     };
@@ -39,7 +55,7 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    return {defaults, titles, select};
+    return {defaults, titles, select, navItems, indicator, nav};
   }
 };
 </script>
@@ -75,6 +91,7 @@ $border-color: #d9d9d9;
       background: $blue;
       position: absolute;
       bottom: -1px;
+      transition: all 250ms;
     }
   }
 

@@ -19,7 +19,7 @@ export default {
     Tabs
   },
   setup() {
-    const x = ref('导航1');
+    const x = ref('导航2');
     return {x};
   }
 };
