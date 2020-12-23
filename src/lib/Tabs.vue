@@ -7,6 +7,7 @@
            :class="{selected:t === selected}">
         {{ t }}
       </div>
+      <div class=" duoduo-tabs-nav-indicator"></div>
     </div>
     <div class=" duoduo-tabs-content">
       <component class=" duoduo-tabs-content-item"
@@ -52,6 +53,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
 
     &-item {
       padding: 8px 0;
@@ -65,6 +67,14 @@ $border-color: #d9d9d9;
       &.selected {
         color: $blue;
       }
+    }
+
+    &-indicator {
+      height: 3px;
+      width: 100px;
+      background: $blue;
+      position: absolute;
+      bottom: -1px;
     }
   }
 
