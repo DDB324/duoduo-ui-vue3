@@ -2,12 +2,16 @@
   <div class=" duoduo-tabs">
     <div class=" duoduo-tabs-nav">
       <div class=" duoduo-tabs-nav-item"
-           v-for="(t,index) in titles" :key="index">{{ t }}
+           v-for="(t,index) in titles" :key="index"
+           @click="select(t)"
+           :class="{selected:t === selected}">
+        {{ t }}
       </div>
     </div>
     <div class=" duoduo-tabs-content">
       <component class=" duoduo-tabs-content-item"
-                 v-for="(c,index) in defaults" :is="c" :key="index"/>
+                 v-for="(c,index) in defaults" :is="c" :key="index"
+                 :class="{selected:c.props.title === selected}"/>
     </div>
   </div>
 </template>
@@ -16,7 +20,15 @@
 import Tab from './Tab.vue';
 
 export default {
+  props: {
+    selected: {
+      type: String,
+    }
+  },
   setup(props, context) {
+    const select = (title: string) => {
+      context.emit('update:selected', title);
+    };
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -26,10 +38,7 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    return {
-      defaults,
-      titles
-    };
+    return {defaults, titles, select};
   }
 };
 </script>
@@ -61,6 +70,14 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
+
+    &-item {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
