@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class=" duoduo-tab">
     <slot/>
   </div>
 </template>
