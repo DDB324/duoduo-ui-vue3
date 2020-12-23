@@ -12,16 +12,14 @@
            ref="indicator"></div>
     </div>
     <div class=" duoduo-tabs-content">
-      <component class=" duoduo-tabs-content-item"
-                 v-for="(c,index) in defaults" :is="c" :key="index"
-                 :class="{selected:c.props.title === selected}"/>
+      <component :is="visibleContent" :key="visibleContent.props.title"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {ref, watchEffect} from 'vue';
+import {computed, ref, watchEffect} from 'vue';
 
 export default {
   props: {
@@ -55,7 +53,10 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    return {defaults, titles, select, selectedItem, indicator, nav};
+    const visibleContent = computed(() => {
+      return defaults.filter(item => item.props.title === props.selected)[0];
+    });
+    return {defaults, titles, select, selectedItem, indicator, nav, visibleContent};
   }
 };
 </script>
@@ -97,14 +98,6 @@ $border-color: #d9d9d9;
 
   &-content {
     padding: 8px 0;
-
-    &-item {
-      display: none;
-
-      &.selected {
-        display: block;
-      }
-    }
   }
 }
 </style>
