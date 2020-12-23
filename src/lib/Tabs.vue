@@ -3,7 +3,7 @@
     <div class=" duoduo-tabs-nav" ref="nav">
       <div class=" duoduo-tabs-nav-item"
            v-for="(t,index) in titles" :key="index"
-           :ref="el => { if (el) navItems[index] = el }"
+           :ref="el => { if (t === selected) {selectedItem = el} }"
            @click="select(t)"
            :class="{selected:t === selected}">
         {{ t }}
@@ -30,13 +30,11 @@ export default {
     }
   },
   setup(props, context) {
-    const navItems = ref<HTMLDivElement[]>([]);
+    const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const nav = ref<HTMLDivElement>(null);
     const setIndicator = () => {
-      const result = navItems.value.filter(
-          item => item.classList.contains('selected'))[0];
-      const {width, left} = result.getBoundingClientRect();
+      const {width, left} = selectedItem.value.getBoundingClientRect();
       const {left: left2} = nav.value.getBoundingClientRect();
       indicator.value.style.width = width + 'px';
       indicator.value.style.left = `${left - left2}px`;
@@ -55,7 +53,7 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    return {defaults, titles, select, navItems, indicator, nav};
+    return {defaults, titles, select, selectedItem, indicator, nav};
   }
 };
 </script>
