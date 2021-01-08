@@ -1,6 +1,6 @@
 <template>
   <div class="topnav">
-    <div class="logo" >LOGO</div>
+    <div class="logo">LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -15,23 +15,25 @@ import {inject, Ref} from 'vue';
 export default {
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
-    const toggleAside = ()=>{
-      asideVisible.value = !asideVisible.value
-    }
-    return {toggleAside}
+    const toggleAside = () => {
+      asideVisible.value = !asideVisible.value;
+    };
+    return {toggleAside};
   },
 };
 </script>
 
 <style lang="scss" scoped>
+$color: #007974;
+
 .topnav {
-  background: pink;
+  color: $color;
   display: flex;
   padding: 16px;
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -50,24 +52,26 @@ export default {
       margin: 0 1em;
     }
   }
-  .toggleAside{
+
+  .toggleAside {
     display: none;
   }
+
   @media (max-width: 500px) {
-    .logo{
+    .logo {
       margin-left: auto;
     }
-    .menu{
-      display:none;
+    .menu {
+      display: none;
     }
-    .toggleAside{
-      display:inline-block;
-      width:24px;
-      height:24px;
-      background:red;
-      position:absolute;
-      left:16px;
-      top:50%;
+    .toggleAside {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: red;
+      position: absolute;
+      left: 16px;
+      top: 50%;
       transform: translateY(-50%);
     }
   }

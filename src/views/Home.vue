@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="topnavAndBanner">
     <Topnav/>
     <div class="banner">
       <h1>duoduo-ui</h1>
@@ -16,17 +16,24 @@
 
 </style>
 <script lang="ts">
-import Topnav from "../components/Topnav.vue";
+import Topnav from '../components/Topnav.vue';
 
 export default {
   components: {Topnav}
-}
+};
 </script>
 
 <style lang="scss" scoped>
-$h: 28px;
+$green: #02bcb0;
+$border-radius: 4px;
+$color: #007974;
+.topnavAndBanner {
+  background: rgb(227, 255, 240);
+  background: linear-gradient(135deg, rgba(227, 255, 240, 1) 0%, rgba(183, 233, 230, 1) 100%);
+}
+
 .banner {
-  background: lightgreen;
+  color: $color;
   padding: 100px 0;
   display: flex;
   flex-direction: column;
@@ -37,13 +44,16 @@ $h: 28px;
     padding: 8px;
 
     a {
-      background: #fff;
-      border-radius: $h/2;
-      padding: 0 8px;
+      background: $green;
+      color: white;
+      padding: 8px 24px;
       margin: 0 8px;
       display: inline-block;
-      height: $h;
-      line-height: $h;
+      border-radius: $border-radius;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
