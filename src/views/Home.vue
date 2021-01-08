@@ -1,13 +1,26 @@
 <template>
-  <div class="topnavAndBanner">
-    <Topnav/>
-    <div class="banner">
-      <h1>duoduo-ui</h1>
-      <h2>一个简单的UI框架</h2>
-      <p class="actions">
-        <a href="https://github.com/DDB324/duoduo-ui-vue3">Github</a>
-        <router-link to="/doc">开始</router-link>
-      </p>
+  <div>
+    <div class="topnavAndBanner">
+      <Topnav/>
+      <div class="banner">
+        <h1>duoduo-ui</h1>
+        <h2>一个简单的UI框架</h2>
+        <p class="actions">
+          <a href="https://github.com/DDB324/duoduo-ui-vue3">Github</a>
+          <router-link to="/doc">开始</router-link>
+        </p>
+      </div>
+    </div>
+    <div class="features">
+      <svg class="icon">
+        <use xlink:href="#icon-vue"></use>
+      </svg>
+      <svg class="icon">
+        <use xlink:href="#icon-typescript"></use>
+      </svg>
+      <svg class="icon">
+        <use xlink:href="#icon-light"></use>
+      </svg>
     </div>
   </div>
 </template>
@@ -30,6 +43,13 @@ $color: #007974;
 .topnavAndBanner {
   background: rgb(227, 255, 240);
   background: linear-gradient(135deg, rgba(227, 255, 240, 1) 0%, rgba(183, 233, 230, 1) 100%);
+}
+
+.features {
+  svg {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 .banner {
