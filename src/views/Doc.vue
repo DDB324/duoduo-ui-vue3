@@ -83,17 +83,26 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 70px 16px 16px;
+    padding: 70px 0;
     height: 100%;
     flex-shrink: 0;
 
     h2 {
+      padding-left: 16px;
       margin-bottom: 4px;
     }
 
     ol {
       li {
-        padding: 4px 0;
+        a {
+          padding: 4px 16px;
+          display: block;
+          text-decoration: none;
+        }
+
+        .router-link-active {
+          background: white;
+        }
       }
     }
   }
