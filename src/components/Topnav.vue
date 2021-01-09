@@ -1,10 +1,10 @@
 <template>
   <div class="topnav">
-    <div class="logo">
+    <router-link to="/" class="logo">
       <svg class="icon">
         <use xlink:href="#icon-airplane"></use>
       </svg>
-    </div>
+    </router-link>
     <div class="menu">
       <router-link to="/doc">
         <svg class="icon">
@@ -59,6 +59,10 @@ $color: #007974;
     max-width: 6em;
     margin-right: auto;
 
+    &:hover {
+      animation: move infinite linear 800ms;
+    }
+
     svg {
       width: 32px;
       height: 32px;
@@ -101,6 +105,13 @@ $color: #007974;
       top: 50%;
       transform: translateY(-50%);
     }
+  }
+  @keyframes move {
+    0% {transform: translateY(0)}
+    25% {transform: translateY(5px)}
+    50% {transform: translateY(0)}
+    75% {transform: translateY(-5px)}
+    100% {transform: translateY(0)}
   }
 }
 </style>
