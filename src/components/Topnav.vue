@@ -13,7 +13,10 @@
         <span>文档</span>
       </router-link>
     </div>
-    <span class="toggleAside" @click="toggleAside"></span>
+    <svg v-if="toggleMenuButtonVisible"
+         class="toggleAside icon" @click="toggleAside">
+      <use xlink:href="#icon-menu"></use>
+    </svg>
   </div>
 </template>
 
@@ -21,6 +24,12 @@
 import {inject, Ref} from 'vue';
 
 export default {
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false,
+    }
+  },
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleAside = () => {
@@ -87,7 +96,6 @@ $color: #007974;
       display: inline-block;
       width: 24px;
       height: 24px;
-      background: red;
       position: absolute;
       left: 16px;
       top: 50%;
