@@ -5,10 +5,14 @@
         <use xlink:href="#icon-airplane"></use>
       </svg>
     </div>
-    <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
-    </ul>
+    <div class="menu">
+      <router-link to="/doc">
+        <svg class="icon">
+          <use xlink:href="#icon-document"></use>
+        </svg>
+        <span>文档</span>
+      </router-link>
+    </div>
     <span class="toggleAside" @click="toggleAside"></span>
   </div>
 </template>
@@ -57,8 +61,14 @@ $color: #007974;
     white-space: nowrap;
     flex-wrap: nowrap;
 
-    li {
-      margin: 0 1em;
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    span {
+      margin-left: 4px;
+      font-size: 20px;
     }
   }
 
