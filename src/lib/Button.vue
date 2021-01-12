@@ -102,7 +102,7 @@ $grey: grey;
     color: inherit;
 
     &:hover, &:focus {
-      color: darken(white, 5%)
+      background: darken(white, 5%)
     }
   }
 
@@ -194,14 +194,15 @@ $grey: grey;
     height: 14px;
     border-radius: 8px;
     border-color: $blue $blue $blue transparent;
-    border-style:solid;
-    border-width:2px;
-    margin-right:4px;
+    border-style: solid;
+    border-width: 2px;
+    margin-right: 4px;
     animation: duoduo-spin infinite 1s linear;
   }
 }
+
 @keyframes duoduo-spin {
-  0%{transform: rotate(0deg)}
-  100%{transform: rotate(360deg)}
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
 }
 </style>
