@@ -54,7 +54,7 @@ export default {
 $green: #02bcb0;
 $border-radius: 4px;
 $color: #007974;
-.topnavAndBanner {
+.banner {
   background: rgb(227, 255, 240);
   background: linear-gradient(135deg, rgba(227, 255, 240, 1) 0%, rgba(183, 233, 230, 1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
@@ -62,20 +62,14 @@ $color: #007974;
 
 .features {
   margin: 32px auto;
-  width: 400px;
-  @media (min-width: 800px) {
-    width: 800px;
-  }
-  @media (min-width: 1200px) {
-    width: 1200px;
-  }
+  padding: 0 16px;
 
   ul {
     display: flex;
     flex-wrap: wrap;
 
     li {
-      width: 400px;
+      width: 100%;
       margin: 16px 0;
       display: grid;
       grid-template-areas:
@@ -99,6 +93,23 @@ $color: #007974;
 
       p {
         grid-area: text;
+      }
+    }
+  }
+
+  @media (min-width: 800px) {
+    width: 800px;
+    ul {
+      li {
+        width: 50%;
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+    ul {
+      li {
+        width: 33.3%;
       }
     }
   }

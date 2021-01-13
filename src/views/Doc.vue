@@ -86,6 +86,7 @@ export default {
     padding: 70px 0;
     height: 100%;
     flex-shrink: 0;
+    z-index: 10;
 
     h2 {
       padding-left: 16px;

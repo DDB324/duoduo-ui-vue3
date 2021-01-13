@@ -51,9 +51,12 @@ $color: #007974;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   justify-content: center;
   align-items: center;
+  background: rgb(227, 255, 240);
+  background: linear-gradient(90deg, rgba(227, 255, 240, 1) 0%, rgba(190, 237, 232, 1) 100%);
+  -moz-user-select:none; /*火狐*/
 
   .logo {
     max-width: 6em;
