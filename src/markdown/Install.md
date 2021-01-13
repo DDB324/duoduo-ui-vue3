@@ -2,13 +2,13 @@
 
 打开终端运行下列命令：
 
-```bash
+```
 npm install duoduo-ui-vue3
 ```
 
 或
 
-```bash
+```
 yarn add duoduo-ui-vue3
 ```
 
