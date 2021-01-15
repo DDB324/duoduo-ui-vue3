@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
-import Icon from './Icon.vue';
+import Icon from '../lib/Icon.vue';
 
 export default {
   components: {

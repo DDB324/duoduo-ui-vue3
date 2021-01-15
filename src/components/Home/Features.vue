@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import Icon from './Icon.vue';
+import Icon from '../../lib/Icon.vue';
 
 export default {
   components: {

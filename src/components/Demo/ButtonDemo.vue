@@ -8,11 +8,11 @@
 </template>
 
 <script lang="ts">
-import Button1Demo from '../components/Button1.demo.vue';
-import Button2Demo from '../components/Button2.demo.vue';
-import Button3Demo from '../components/Button3.demo.vue';
-import Button4Demo from '../components/Button4.demo.vue';
-import Button5Demo from '../components/Button5.demo.vue';
+import Button1Demo from '../Button/Button1.demo.vue';
+import Button2Demo from '../Button/Button2.demo.vue';
+import Button3Demo from '../Button/Button3.demo.vue';
+import Button4Demo from '../Button/Button4.demo.vue';
+import Button5Demo from '../Button/Button5.demo.vue';
 
 export default {
   setup() {

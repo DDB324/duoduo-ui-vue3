@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts">
-import Dialog1Demo from '../components/Dialog1.demo.vue';
-import Dialog2Demo from '../components/Dialog2.demo.vue';
+import Dialog1Demo from '../Dialog/Dialog1.demo.vue';
+import Dialog2Demo from '../Dialog/Dialog2.demo.vue';
 
 export default {
   setup() {

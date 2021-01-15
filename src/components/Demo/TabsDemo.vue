@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import Tabs1Demo from './Tabs1.demo.vue';
+import Tabs1Demo from '../Tabs/Tabs1.demo.vue';
 
 export default {
   setup() {

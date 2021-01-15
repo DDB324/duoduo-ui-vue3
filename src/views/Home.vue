@@ -8,8 +8,8 @@
 
 <script lang="ts">
 import Topnav from '../components/Topnav.vue';
-import Features from '../components/Features.vue';
-import Banner from '../components/Banner.vue';
+import Features from '../components/Home/Features.vue';
+import Banner from '../components/Home/Banner.vue';
 
 export default {
   components: {Topnav, Features, Banner}

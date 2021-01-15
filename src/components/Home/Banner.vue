@@ -1,7 +1,7 @@
 <template>
   <div class="banner">
     <h1>DuoDuo UI</h1>
-    <h2>一个简单的UI框架</h2>
+    <h2>一个基于 Vue 3 的简单的 UI 组件库</h2>
     <p class="actions">
       <router-link to="/doc">开始</router-link>
       <a href="https://github.com/DDB324/duoduo-ui-vue3">
@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import Icon from './Icon.vue';
+import Icon from '../../lib/Icon.vue';
 
 export default {
   components: {

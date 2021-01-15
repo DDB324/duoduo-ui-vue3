@@ -12,7 +12,7 @@
 
 <script lang="ts">
 import Topnav from '../components/Topnav.vue';
-import Aside from '../components/Aside.vue';
+import Aside from '../components/Doc/Aside.vue';
 
 export default {
   components: {Topnav, Aside},
