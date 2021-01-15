@@ -20,3 +20,29 @@ export default {
   },
 }
 </script>
+
+<style>
+/*控制整个滚动条*/
+::-webkit-scrollbar {
+  background-color: lightgray;
+  width: 10px;
+  height: 10px;
+  background-clip: padding-box;
+}
+
+/*滚动条两端方向按钮*/
+/*::-webkit-scrollbar-button {*/
+/*  background-color: pink;*/
+/*}*/
+
+/*滚动条中间滑动部分*/
+::-webkit-scrollbar-thumb {
+  background-color: #2078ef;
+  border-radius: 5px;
+}
+
+/*滚动条右下角区域*/
+::-webkit-scrollbar-corner {
+  background-color: red;
+}
+</style>
