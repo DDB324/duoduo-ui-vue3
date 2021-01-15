@@ -1,36 +1,8 @@
 <template>
   <div class="layout">
-    <Topnav toggle-menu-button-visible class="nav"/>
+    <Topnav toggle-menu-button-visible class="docNav"/>
     <div class="content">
-      <aside v-if="asideVisible">
-        <h2>文档</h2>
-        <ol>
-          <li>
-            <router-link to="/doc/intro">介绍</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/install">安装</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/get-started">开始使用</router-link>
-          </li>
-        </ol>
-        <h2>组件列表</h2>
-        <ol>
-          <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/button">Button 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
-          </li>
-        </ol>
-      </aside>
+      <Aside></Aside>
       <main>
         <router-view/>
       </main>
@@ -40,14 +12,10 @@
 
 <script lang="ts">
 import Topnav from '../components/Topnav.vue';
-import {inject, Ref} from 'vue';
+import Aside from '../components/Aside.vue';
 
 export default {
-  components: {Topnav},
-  setup() {
-    const asideVisible = inject<Ref<boolean>>('asideVisible');
-    return {asideVisible};
-  }
+  components: {Topnav, Aside},
 };
 </script>
 
@@ -57,8 +25,14 @@ export default {
   flex-direction: column;
   height: 100vh;
 
-  .nav {
+  .docNav {
     flex-shrink: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 3px #2078ef;
+    background: white;
   }
 
   .content {
@@ -73,39 +47,8 @@ export default {
   main {
     overflow: auto;
     flex-grow: 1;
-    padding: 16px;
+    padding: 32px;
     background: white;
-  }
-
-  aside {
-    background: lightblue;
-    width: 150px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 70px 0;
-    height: 100%;
-    flex-shrink: 0;
-    z-index: 10;
-
-    h2 {
-      padding-left: 16px;
-      margin-bottom: 4px;
-    }
-
-    ol {
-      li {
-        a {
-          padding: 4px 16px;
-          display: block;
-          text-decoration: none;
-        }
-
-        .router-link-active {
-          background: white;
-        }
-      }
-    }
   }
 }
 </style>

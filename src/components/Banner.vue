@@ -1,40 +1,74 @@
 <template>
   <div class="banner">
-    <h1>duoduo-ui</h1>
+    <h1>DuoDuo UI</h1>
     <h2>一个简单的UI框架</h2>
     <p class="actions">
-      <a href="https://github.com/DDB324/duoduo-ui-vue3">Github</a>
       <router-link to="/doc">开始</router-link>
+      <a href="https://github.com/DDB324/duoduo-ui-vue3">
+        <Icon name="github"></Icon>
+        GitHub</a>
     </p>
   </div>
 </template>
 
 <script lang="ts">
-export default {}
+import Icon from './Icon.vue';
+
+export default {
+  components: {
+    Icon
+  }
+};
 </script>
 
 <style lang="scss" scoped>
 $green: #02bcb0;
-$border-radius: 4px;
+$border-radius: 2em;
 $color: #007974;
 .banner {
-  color: $color;
-  padding: 100px 0;
+  color: #fff;
+  //padding: 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  h1 {
+    font-size: 3em;
+    margin-top: 20px
+  }
+
+  h2 {
+    margin: 20px
+  }
+
   .actions {
-    padding: 8px;
+    padding: 24px;
+    margin-bottom: 50px;
+    font-size:1.2em;
 
     a {
-      background: $green;
-      color: white;
-      padding: 8px 24px;
+      background: white;
+      color: #273849;
+      padding: 8px 3em;
       margin: 0 8px;
       display: inline-block;
       border-radius: $border-radius;
+      font-weight: 600;
+
+      &:last-child {
+        background: #eee;
+        position: relative;
+
+        svg {
+          position: absolute;
+          left: 0.3em;
+          top: 0.15em;
+          width: 2em;
+          height: 2em;
+          vertical-align: sub;
+        }
+      }
 
       &:hover {
         text-decoration: none;

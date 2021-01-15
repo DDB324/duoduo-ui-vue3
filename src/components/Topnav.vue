@@ -1,29 +1,27 @@
 <template>
   <div class="topnav">
-    <router-link to="/" class="logo">
-      <Icon name="whirlpool"></Icon>
+    <router-link to="/" class="logo-wrapper">
+      <Icon class="logo" name="whirlpool"></Icon>
     </router-link>
     <div class="menu">
+      <a href="https://github.com/DDB324/duoduo-ui-vue3">GitHub</a>
       <router-link to="/doc">
-        <svg class="icon">
-          <use xlink:href="#icon-document"></use>
-        </svg>
-        <span>文档</span>
+        <span>Document</span>
       </router-link>
     </div>
-    <svg v-if="toggleMenuButtonVisible"
-         class="toggleAside icon" @click="toggleAside">
-      <use xlink:href="#icon-menu"></use>
-    </svg>
+    <Icon v-if="toggleMenuButtonVisible"
+          class="toggleAside"
+          @click="toggleAside"
+          name="menu"></Icon>
   </div>
 </template>
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
-import Icon from './Icon.vue'
+import Icon from './Icon.vue';
 
 export default {
-  components:{
+  components: {
     Icon
   },
   props: {
@@ -43,32 +41,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #007974;
+$color: #273849;
 
 .topnav {
   color: $color;
   display: flex;
-  padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  padding: 16px 8px 16px 64px;
   z-index: 20;
   justify-content: center;
   align-items: center;
-  background: rgb(227, 255, 240);
-  background: linear-gradient(90deg, rgba(227, 255, 240, 1) 0%, rgba(190, 237, 232, 1) 100%);
-  -moz-user-select:none; /*火狐*/
+  -moz-user-select: none; /*火狐*/
 
-  .logo {
+  .logo-wrapper {
     max-width: 6em;
     margin-right: auto;
+    text-decoration: none;
 
-    &:hover {
-      animation: move infinite linear 800ms;
-    }
-
-    svg {
+    .logo {
       width: 32px;
       height: 32px;
     }
@@ -79,14 +68,30 @@ $color: #007974;
     white-space: nowrap;
     flex-wrap: nowrap;
 
-    .icon {
-      width: 20px;
-      height: 20px;
-    }
-
-    span {
-      margin-left: 4px;
+    a {
+      margin: 0 .6em;
       font-size: 20px;
+      text-decoration: none;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 1px;
+        background: #1a64ea;
+        display: inline-block;
+        transform: scale3d(0, 1, 1);
+        transform-origin: left;
+        transition: all 0.5s;
+      }
+
+      &:hover:after {
+        transform: scale3d(1, 1, 1);
+      }
     }
   }
 
@@ -95,7 +100,7 @@ $color: #007974;
   }
 
   @media (max-width: 500px) {
-    .logo {
+    .logo-wrapper {
       margin-left: auto;
     }
     .menu {
@@ -110,13 +115,6 @@ $color: #007974;
       top: 50%;
       transform: translateY(-50%);
     }
-  }
-  @keyframes move {
-    0% {transform: translateY(0)}
-    25% {transform: translateY(5px)}
-    50% {transform: translateY(0)}
-    75% {transform: translateY(-5px)}
-    100% {transform: translateY(0)}
   }
 }
 </style>
