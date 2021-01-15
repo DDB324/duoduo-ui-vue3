@@ -1,9 +1,7 @@
 <template>
   <div class="topnav">
     <router-link to="/" class="logo">
-      <svg class="icon">
-        <use xlink:href="#icon-airplane"></use>
-      </svg>
+      <Icon name="whirlpool"></Icon>
     </router-link>
     <div class="menu">
       <router-link to="/doc">
@@ -22,8 +20,12 @@
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
+import Icon from './Icon.vue'
 
 export default {
+  components:{
+    Icon
+  },
   props: {
     toggleMenuButtonVisible: {
       type: Boolean,
