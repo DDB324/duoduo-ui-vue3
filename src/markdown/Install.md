@@ -12,4 +12,6 @@ npm install duoduo-ui-vue3
 yarn add duoduo-ui-vue3
 ```
 
+即可安装本组件库
+
 下一节：[开始使用](#/doc/get-started)

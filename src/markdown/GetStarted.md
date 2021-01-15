@@ -2,13 +2,13 @@
 
 请先[安装](#/doc/install)本组件库。
 
-然后在你的代码中写入下面的代码
+然后在你需要使用本组件库的文件中中写入下面的代码引入本组件库
 
 ```
-import {Button, Tabs, Switch, Dialog} from "duoduo-ui-vue3"
+import {Button, Tabs, Switch, Dialog, openDialog} from "duoduo-ui-vue3"
 ```
 
-就可以使用我提供的组件了。
+这样就可以使用我提供的组件了。
 
 ## Vue 单文件组件
 
@@ -16,11 +16,11 @@ import {Button, Tabs, Switch, Dialog} from "duoduo-ui-vue3"
 
 ```
 <template>
-    <div><Button>按钮</Button></div>
+    <Button>按钮</Button>
 </template>
 
 <script>
-    import {Button, Tabs, Switch, Dialog} from "duoduo-ui-vue3"
+    import {Button} from "duoduo-ui-vue3"
     export default {
         components: {Button}
     }
