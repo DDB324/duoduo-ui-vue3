@@ -1,11 +1,12 @@
 import {createWebHashHistory, createRouter} from 'vue-router';
 import Home from './views/Home.vue';
 import Doc from './views/Doc.vue';
-import SwitchDemo from './components/SwitchDemo.vue';
-import ButtonDemo from './components/ButtonDemo.vue';
-import DialogDemo from './components/DialogDemo.vue';
-import TabsDemo from './components/TabsDemo.vue';
+import SwitchDemo from './components/Demo/SwitchDemo.vue';
+import ButtonDemo from './components/Demo/ButtonDemo.vue';
+import DialogDemo from './components/Demo/DialogDemo.vue';
+import TabsDemo from './components/Demo/TabsDemo.vue';
 import Markdown from './components/Markdown.vue';
+import IconDemo from './components/Demo/IconDemo.vue';
 import Intro from './markdown/Intro.md';
 import Install from './markdown/Install.md';
 import GetStarted from './markdown/GetStarted.md';
@@ -25,6 +26,7 @@ export const router = createRouter({
         {path: 'get-started', component: md(GetStarted)},
         {path: 'install', component: md(Install)},
         {path: 'switch', component: SwitchDemo},
+        {path: 'icon', component: IconDemo},
         {path: 'button', component: ButtonDemo},
         {path: 'dialog', component: DialogDemo},
         {path: 'tabs', component: TabsDemo}
