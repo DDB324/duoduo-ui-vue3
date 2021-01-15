@@ -9,6 +9,7 @@ import Demo from './components/Demo.vue';
 import Dialog from './lib/Dialog.vue';
 import Tab from './lib/Tab.vue';
 import Tabs from './lib/Tabs.vue';
+import Icon from './lib/Icon.vue';
 
 
 const app = createApp(App);
@@ -19,3 +20,4 @@ app.component('Demo',Demo)
 app.component('Dialog',Dialog)
 app.component('Tab',Tab)
 app.component('Tabs',Tabs)
+app.component('Icon',Icon)
