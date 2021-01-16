@@ -43,7 +43,8 @@ export default {
 ul {
   display: flex;
   flex-wrap: wrap;
-  margin: 24px 0;
+  margin-top:24px;
+  justify-content: center;
 
   li {
     height: 120px;
