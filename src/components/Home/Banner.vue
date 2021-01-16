@@ -1,7 +1,7 @@
 <template>
   <div class="banner">
     <h1>DuoDuo UI</h1>
-    <h2>一个基于 Vue 3 的简单的 UI 组件库</h2>
+    <h2>一个基于 Vue 3 的简单 UI 组件库</h2>
     <p class="actions">
       <router-link to="/doc">开始</router-link>
       <a href="https://github.com/DDB324/duoduo-ui-vue3">
@@ -45,12 +45,12 @@ $color: #007974;
   .actions {
     padding: 24px;
     margin-bottom: 50px;
-    font-size:1.2em;
+    font-size: 1.2em;
 
     a {
       background: white;
       color: #273849;
-      padding: 8px 3em;
+      padding: 8px 2em;
       margin: 0 8px;
       display: inline-block;
       border-radius: $border-radius;
@@ -59,6 +59,9 @@ $color: #007974;
       &:last-child {
         background: #eee;
         position: relative;
+        padding-left: 48px;
+        padding-right: 12px;
+        color: #4f5959;
 
         svg {
           position: absolute;
@@ -67,6 +70,7 @@ $color: #007974;
           width: 2em;
           height: 2em;
           vertical-align: sub;
+          color: #7f8c8d
         }
       }
 
