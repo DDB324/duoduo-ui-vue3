@@ -6,15 +6,14 @@
         <component :is="component"/>
       </div>
       <div class="demo-actions">
-        <Button level="main" v-if="codeVisible" @click="hideCode">
+        <Button level="main" v-if="codeVisible === 'show'" @click="codeVisible = 'hide'">
           隐藏代码
         </Button>
-        <Button level="main" v-else @click="showCode">
+        <Button level="main" v-else @click="codeVisible = 'show'">
           查看代码
         </Button>
       </div>
-      <div class="demo-code bounce-enter-active"
-           v-if="codeVisible">
+      <div :class="`demo-code-${codeVisible}`">
         <pre class="language-html"
              v-html="html"/>
       </div>
@@ -39,43 +38,35 @@ export default {
     },
   },
   setup(props) {
-    const codeVisible = ref(false);
+    const codeVisible = ref('hide');
     const html = computed(() => {
       return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html');
     });
-    const showCode = () => {
-      codeVisible.value = true;
-    };
-    const hideCode = () => {
-      codeVisible.value = false;
-    };
-    return {codeVisible, Prism, html, showCode, hideCode};
+    return {codeVisible, Prism, html};
   }
 };
 </script>
 
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
-.bounce-enter-active {
-  animation: bounce-in .5s;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
 .demo {
   border: 2px solid $border-color;
   margin: 16px 0 32px;
   border-radius: 8px;
+  overflow-y: hidden;
+
+  .demo-code-hide {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 300ms;
+  }
+
+  .demo-code-show {
+    max-height: 800px;
+    transition: all 300ms;
+  }
+
 
   h2 {
     font-size: 20px;
