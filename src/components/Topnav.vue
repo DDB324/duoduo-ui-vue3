@@ -5,8 +5,9 @@
     </router-link>
     <div class="menu">
       <a href="https://github.com/DDB324/duoduo-ui-vue3">GitHub</a>
+      <a href="https://www.yuque.com/jiangdaoran/gt5tss/faonoe">笔记</a>
       <router-link to="/doc">
-        <span>Document</span>
+        <span>文档</span>
       </router-link>
     </div>
     <Icon v-if="toggleMenuButtonVisible"
