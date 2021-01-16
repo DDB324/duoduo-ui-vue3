@@ -46,11 +46,14 @@ $color: #273849;
 .topnav {
   color: $color;
   display: flex;
-  padding: 16px 8px 16px 64px;
+  padding: 12px 8px 12px 64px;
   z-index: 20;
   justify-content: center;
   align-items: center;
   -moz-user-select: none; /*火狐*/
+  @media (max-width:500px) {
+    padding-left: 8px;
+  }
 
   .logo-wrapper {
     max-width: 6em;
@@ -58,8 +61,9 @@ $color: #273849;
     text-decoration: none;
 
     .logo {
-      width: 32px;
-      height: 32px;
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
     }
   }
 
