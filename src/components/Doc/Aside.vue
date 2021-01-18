@@ -12,6 +12,12 @@
         <router-link to="/doc/get-started">开始使用</router-link>
       </li>
     </ol>
+    <h2>布局</h2>
+    <ol>
+      <li>
+        <router-link to="/doc/layout">Layout 布局</router-link>
+      </li>
+    </ol>
     <h2>通用</h2>
     <ol>
       <li>

@@ -7,6 +7,7 @@ import DialogDemo from './components/Demo/DialogDemo.vue';
 import TabsDemo from './components/Demo/TabsDemo.vue';
 import Markdown from './components/Markdown.vue';
 import IconDemo from './components/Demo/IconDemo.vue';
+import LayoutDemo from './components/Demo/LayoutDemo.vue';
 import Intro from './markdown/Intro.md';
 import Install from './markdown/Install.md';
 import GetStarted from './markdown/GetStarted.md';
@@ -29,7 +30,8 @@ export const router = createRouter({
         {path: 'icon', component: IconDemo},
         {path: 'button', component: ButtonDemo},
         {path: 'dialog', component: DialogDemo},
-        {path: 'tabs', component: TabsDemo}
+        {path: 'tabs', component: TabsDemo},
+        {path: 'layout', component: LayoutDemo}
       ]
     }
   ]
