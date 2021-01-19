@@ -6,7 +6,7 @@
         <component :is="component"/>
       </div>
       <div class="demo-actions">
-        <Button level="main" v-if="codeVisible === 'show'" @click="codeVisible = 'hide'">
+        <Button level="main" style="background: #1a64ea" v-if="codeVisible === 'show'" @click="codeVisible = 'hide'">
           隐藏代码
         </Button>
         <Button level="main" v-else @click="codeVisible = 'show'">

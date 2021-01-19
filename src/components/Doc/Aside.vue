@@ -1,45 +1,47 @@
 <template>
-  <aside v-if="asideVisible">
-    <h2>文档</h2>
-    <ol>
-      <li>
-        <router-link to="/doc/intro">介绍</router-link>
-      </li>
-      <li>
-        <router-link to="/doc/install">安装</router-link>
-      </li>
-      <li>
-        <router-link to="/doc/get-started">开始使用</router-link>
-      </li>
-    </ol>
-    <h2>布局</h2>
-    <ol>
-      <li>
-        <router-link to="/doc/layout">Layout 布局</router-link>
-      </li>
-    </ol>
-    <h2>通用</h2>
-    <ol>
-      <li>
-        <router-link to="/doc/icon">Icon 图标</router-link>
-      </li>
-      <li>
-        <router-link to="/doc/button">Button 按钮</router-link>
-      </li>
-    </ol>
-    <h2>组件</h2>
-    <ol>
-      <li>
-        <router-link to="/doc/switch">Switch 开关</router-link>
-      </li>
-      <li>
-        <router-link to="/doc/dialog">Dialog 对话框</router-link>
-      </li>
-      <li>
-        <router-link to="/doc/tabs">Tabs 标签</router-link>
-      </li>
-    </ol>
-  </aside>
+  <transition name="bounce">
+    <aside v-if="asideVisible">
+      <h2>文档</h2>
+      <ol>
+        <li>
+          <router-link to="/doc/intro">介绍</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/install">安装</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/get-started">开始使用</router-link>
+        </li>
+      </ol>
+      <h2>布局</h2>
+      <ol>
+        <li>
+          <router-link to="/doc/layout">Layout 布局</router-link>
+        </li>
+      </ol>
+      <h2>通用</h2>
+      <ol>
+        <li>
+          <router-link to="/doc/icon">Icon 图标</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/button">Button 按钮</router-link>
+        </li>
+      </ol>
+      <h2>组件</h2>
+      <ol>
+        <li>
+          <router-link to="/doc/switch">Switch 开关</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/dialog">Dialog 对话框</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/tabs">Tabs 标签</router-link>
+        </li>
+      </ol>
+    </aside>
+  </transition>
 </template>
 
 <script lang="ts">
@@ -54,9 +56,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+::-webkit-scrollbar-thumb {
+  background-color: #58caf5;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .8s;
+}
+
+.bounce-leave-active {
+  animation: bounce-in .8s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 aside {
   background: #ffffff;
-  width: 150px;
+  width: 200px;
   position: fixed;
   top: 0;
   left: 0;
@@ -65,6 +89,7 @@ aside {
   flex-shrink: 0;
   z-index: 10;
   box-shadow: 0 0 3px #2f99f4;
+  overflow: auto;
 
   h2 {
     padding-left: 8px;
