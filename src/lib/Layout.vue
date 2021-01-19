@@ -31,11 +31,9 @@ export default {
   flex-direction: column;
   min-height: 0;
   background: #f0f2f5;
-
-  .hasSide {
-    flex-direction: row;
-  }
 }
 
-
+.hasSide {
+  flex-direction: row;
+}
 </style>
