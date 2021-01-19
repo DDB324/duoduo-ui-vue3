@@ -5,5 +5,7 @@
 </template>
 
 <script lang='ts'>
-export default {};
+export default {
+  name:'d-header'
+};
 </script>

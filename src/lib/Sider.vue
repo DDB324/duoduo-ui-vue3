@@ -1,9 +1,13 @@
 <template>
-  <div></div>
+  <aside class=" duoduo-layout-sider">
+    <slot></slot>
+  </aside>
 </template>
 
 <script lang='ts'>
-export default {};
+export default {
+  name:'d-sider'
+};
 </script>
 
 <style lang='scss' scoped>
