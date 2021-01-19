@@ -38,7 +38,7 @@ export default {
   .content {
     display: flex;
     padding-top: 60px;
-    padding-left: 156px;
+    padding-left: 206px;
     @media (max-width: 500px) {
       padding-left: 0;
     }

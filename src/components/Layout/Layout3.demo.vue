@@ -22,10 +22,10 @@ export default {};
 
   &-header {height: 64px;background: #82e2f9;line-height: 64px;}
 
-  &-content {height: 120px;background: #2f99f4;line-height: 128px;}
+  &-content {height: 200px;background: #2f99f4;line-height: 200px;}
 
   &-footer {height: 64px;background: #82e2f9;line-height: 64px;}
 
-  &-sider {width: 100px;min-height: 100%;background: #58caf5;line-height: 120px}
+  &-sider {width: 20%;min-height: 100%;background: #58caf5;line-height: 120px}
 }
 </style>
