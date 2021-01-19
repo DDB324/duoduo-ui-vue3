@@ -4,12 +4,10 @@ import {createApp} from 'vue';
 import App from './App.vue';
 import {router} from './router';
 import 'github-markdown-css'
-import Button from './lib/Button.vue'
 import Demo from './components/Demo.vue';
-import Dialog from './lib/Dialog.vue';
-import Tab from './lib/Tab.vue';
-import Tabs from './lib/Tabs.vue';
-import Icon from './lib/Icon.vue';
+import {Button,Switch,Dialog,Tabs,Tab,Icon,
+  Layout,Content,Header,Footer,Sider
+} from './lib/index'
 
 
 const app = createApp(App);
@@ -21,3 +19,9 @@ app.component('Dialog',Dialog)
 app.component('Tab',Tab)
 app.component('Tabs',Tabs)
 app.component('Icon',Icon)
+app.component('Layout',Layout)
+app.component('Content',Content)
+app.component('Switch',Switch)
+app.component('Header',Header)
+app.component('Footer',Footer)
+app.component('Sider',Sider)

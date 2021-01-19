@@ -12,13 +12,7 @@
 </template>
 
 <script lang="ts">
-import Icon from '../../lib/Icon.vue';
-
-export default {
-  components: {
-    Icon
-  }
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -27,7 +21,6 @@ $border-radius: 2em;
 $color: #007974;
 .banner {
   color: #fff;
-  //padding: 50px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;

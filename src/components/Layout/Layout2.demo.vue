@@ -3,32 +3,18 @@
 </demo>
 
 <template>
-  <d-layout>
-    <d-header>header</d-header>
-    <d-layout>
-      <d-sider>sider</d-sider>
-      <d-content>content</d-content>
-    </d-layout>
-    <d-footer>footer</d-footer>
-  </d-layout>
+  <Layout>
+    <Header>header</Header>
+    <Layout>
+      <Sider>sider</Sider>
+      <Content>content</Content>
+    </Layout>
+    <Footer>footer</Footer>
+  </Layout>
 </template>
 
 <script lang="ts">
-import Layout from '/src/lib/Layout.vue';
-import Header from '/src/lib/Header.vue';
-import Content from '/src/lib/Content.vue';
-import Footer from '/src/lib/Footer.vue';
-import Sider from '/src/lib/Sider.vue';
-
-export default {
-  components: {
-    'd-layout': Layout,
-    'd-header': Header,
-    'd-content': Content,
-    'd-footer': Footer,
-    'd-sider': Sider
-  },
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>

@@ -22,8 +22,6 @@
 </template>
 
 <script lang="ts">
-import Button from '../lib/Button.vue';
-
 import 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 import {computed, ref} from 'vue';
@@ -31,7 +29,6 @@ import {computed, ref} from 'vue';
 const Prism = (window as any).Prism;
 
 export default {
-  components: {Button},
   props: {
     component: {
       type: Object

@@ -19,12 +19,8 @@
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
-import Icon from '../lib/Icon.vue';
 
 export default {
-  components: {
-    Icon
-  },
   props: {
     toggleMenuButtonVisible: {
       type: Boolean,
