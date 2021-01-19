@@ -63,7 +63,7 @@ $border-color: #d9d9d9;
   }
 
   .demo-code-show {
-    max-height: 800px;
+    max-height: 1000px;
     transition: all 300ms;
   }
 
