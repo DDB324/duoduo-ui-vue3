@@ -1,4 +1,5 @@
 <template>
+  <h1 class="demo-title">Tabs 标签页</h1>
   <Demo :component="Tabs1Demo"/>
 </template>
 
