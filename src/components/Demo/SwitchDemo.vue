@@ -1,9 +1,8 @@
 <template>
-  <div class="switchDemo">
-    <h1>Switch 组件示例</h1>
+    <h1 class="demo-title">Switch 开关</h1>
+    <h3>开关选择器</h3>
     <Demo :component="Switch1Demo"/>
     <Demo :component="Switch2Demo"/>
-  </div>
 </template>
 
 <script lang="ts">

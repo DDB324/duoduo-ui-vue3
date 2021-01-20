@@ -1,5 +1,5 @@
 <demo>
-常规用法
+基本:最简单的用法
 </demo>
 
 <template>
@@ -11,7 +11,7 @@ import {ref} from 'vue';
 
 export default {
   setup() {
-    const bool = ref(false);
+    const bool = ref(true);
     return {
       bool
     };

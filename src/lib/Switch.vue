@@ -1,6 +1,6 @@
 <template>
-  <button class="duoduo-switch" @click="toggle" :class="{'duoduo-checked':value}">
-    <span></span>
+  <button class="duoduo-switch" @click="toggle" :class="{'duoduo-checked':value}" :disabled="disabled">
+    <span class=" duoduo-switch-handle"></span>
   </button>
 </template>
 
@@ -8,7 +8,11 @@
 
 export default {
   props: {
-    value: Boolean
+    value: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, context) {
     const toggle = () => {
@@ -39,13 +43,13 @@ $h2: $h - 4px;
   }
 
   &:active {
-    span {
+    .duoduo-switch-handle {
       width: $h2 + 4px;
     }
   }
 
   &.duoduo-checked:active {
-    span {
+    .duoduo-switch-handle {
       width: $h2 + 4px;
       margin-left: -4px;
     }
@@ -54,12 +58,12 @@ $h2: $h - 4px;
   &.duoduo-checked {
     background: #1890ff;
 
-    span {
+    .duoduo-switch-handle {
       left: calc(100% - #{$h2} - 2px);
     }
   }
 
-  span {
+  .duoduo-switch-handle {
     position: absolute;
     height: $h2;
     width: $h2;
@@ -68,6 +72,10 @@ $h2: $h - 4px;
     top: 2px;
     left: 2px;
     transition: all 250ms;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
   }
 }
 </style>
