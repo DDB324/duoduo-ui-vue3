@@ -1,11 +1,12 @@
 <demo>
-示例1: 3种不同的按钮
+按钮类型:4种类型按钮
 </demo>
 
 <template>
-  <Button @click="onClick">默认按钮</Button>
-  <Button theme="link">链接按钮</Button>
-  <Button theme="text">文本按钮</Button>
+  <Button @click="onClick">Default Button</Button>
+  <Button theme="main">Primary Button</Button>
+  <Button theme="text">Text Button</Button>
+  <Button theme="link">Link Button</Button>
 </template>
 
 <script lang="ts">

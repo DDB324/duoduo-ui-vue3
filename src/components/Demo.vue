@@ -4,12 +4,12 @@
       <div class="demo-component">
         <component :is="component"/>
       </div>
-      <h2>{{ component.__sourceCodeTitle }}</h2>
+      <h3>{{ component.__sourceCodeTitle }}</h3>
       <div class="demo-actions">
-        <Button level="main" style="background: #1a64ea" v-if="codeVisible === 'show'" @click="codeVisible = 'hide'">
+        <Button v-if="codeVisible === 'show'" @click="codeVisible = 'hide'">
           隐藏代码
         </Button>
-        <Button level="main" v-else @click="codeVisible = 'show'">
+        <Button theme="main" v-else @click="codeVisible = 'show'">
           查看代码
         </Button>
       </div>
@@ -65,7 +65,7 @@ $border-color: #d9d9d9;
   }
 
 
-  h2 {
+  h3 {
     font-size: 20px;
     padding: 8px 16px;
   }

@@ -1,23 +1,12 @@
 <demo>
-示例3: 按钮样式
+示例3: 危险按钮
 </demo>
 
 <template>
-  <div>
-    <Button level="main">主要按钮</Button>
-    <Button>普通按钮</Button>
-    <Button level="danger">危险按钮</Button>
-  </div>
-  <div>
-    <Button theme="link" level="main">主要链接按钮</Button>
-    <Button theme="link">普通链接按钮</Button>
-    <Button theme="link" level="danger">危险链接按钮</Button>
-  </div>
-  <div>
-    <Button theme="text" level="main">主要文本按钮</Button>
-    <Button theme="text">普通文本按钮</Button>
-    <Button theme="text" level="danger">危险链接按钮</Button>
-  </div>
+  <Button level="danger">Default</Button>
+  <Button level="danger" theme="main">Primary</Button>
+  <Button level="danger" theme="text">Text</Button>
+  <Button level="danger" theme="link">Link</Button>
 </template>
 
 <script lang="ts">
