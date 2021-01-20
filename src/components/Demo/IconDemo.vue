@@ -1,5 +1,5 @@
 <template>
-  <h1>Icon 图标</h1>
+  <h1 class="demo-title">Icon 图标</h1>
   需要在index.html中增加script标签,scr属性填写以下路径
   <pre class="language-html"
        v-text="url"/>
