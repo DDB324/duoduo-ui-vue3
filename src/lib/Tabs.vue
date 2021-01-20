@@ -5,7 +5,8 @@
            v-for="(t,index) in titles" :key="index"
            :ref="el => { if (t === selected) {selectedItem = el} }"
            @click="select(t)"
-           :class="{selected:t === selected}">
+           :class="{selected:t === selected,disabled: t === disabled}"
+      >
         {{ t }}
       </div>
       <div class=" duoduo-tabs-nav-indicator"
@@ -25,6 +26,10 @@ export default {
   props: {
     selected: {
       type: String,
+    },
+    disabled: {
+      type: [String, Boolean],
+      default: false
     }
   },
   setup(props, context) {
@@ -76,6 +81,11 @@ $border-color: #d9d9d9;
       padding: 8px 0;
       margin: 0 16px;
       cursor: pointer;
+
+      &.disabled {
+        pointer-events: none;
+        color: #eeeeee;
+      }
 
       &:first-child {
         margin-left: 0;
