@@ -1,5 +1,6 @@
 <template>
-  <h1>Layout 示例</h1>
+  <h1 class="demo-title">Layout 布局</h1>
+  <h3>协助进行页面整体布局</h3>
   <Demo :component="Layout1Demo"/>
   <Demo :component="Layout2Demo"/>
   <Demo :component="Layout3Demo"/>
