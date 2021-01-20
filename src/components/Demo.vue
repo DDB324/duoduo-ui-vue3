@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="demo">
-      <h2>{{ component.__sourceCodeTitle }}</h2>
       <div class="demo-component">
         <component :is="component"/>
       </div>
+      <h2>{{ component.__sourceCodeTitle }}</h2>
       <div class="demo-actions">
         <Button level="main" style="background: #1a64ea" v-if="codeVisible === 'show'" @click="codeVisible = 'hide'">
           隐藏代码
@@ -68,11 +68,11 @@ $border-color: #d9d9d9;
   h2 {
     font-size: 20px;
     padding: 8px 16px;
-    border-bottom: 2px solid $border-color;
   }
 
   &-component {
     padding: 16px;
+    border-bottom: 2px solid $border-color;
   }
 
   &-actions {
