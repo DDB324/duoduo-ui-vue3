@@ -1,9 +1,9 @@
 <demo>
-示例2:
+示例2:一句代码打开Dialog
 </demo>
 
 <template>
-  <Button @click="showDialog">展示Dialog</Button>
+  <Button theme="main" @click="showDialog">Open Dialog</Button>
 </template>
 
 <script lang="ts">

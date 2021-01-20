@@ -1,16 +1,15 @@
 <demo>
-示例1:
+示例1:基础用法
 </demo>
 
 <template>
-  <Button @click="toggle">展示Dialog</Button>
-  <Dialog v-model:visible="x" :ok="f1" :cancel="f2" :close-on-click-overlay="false">
+  <Button @click="toggle" theme="main">Open Dialog</Button>
+  <Dialog v-model:visible="value" :ok="ok" :cancel="cancel" :close-on-click-overlay="false">
     <template v-slot:title>
-      <strong>加粗的标题</strong>
+      <strong>标题支持HTML</strong>
     </template>
     <template v-slot:content>
-      <strong>hi</strong>
-      <div>hi2</div>
+      <strong>内容支持HTML</strong>
     </template>
   </Dialog>
 </template>
@@ -20,16 +19,16 @@ import {ref} from 'vue';
 
 export default {
   setup() {
-    const x = ref(false);
+    const value = ref(false);
     const toggle = () => {
-      x.value = !x.value;
+      value.value = !value.value;
     };
-    const f1 = () => {
+    const ok = () => {
       return false;
     };
-    const f2 = () => {
+    const cancel = () => {
     };
-    return {x, toggle, f1, f2};
+    return {value, toggle, ok, cancel};
   }
 };
 </script>
