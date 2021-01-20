@@ -1,7 +1,7 @@
 <template>
   <div class="topnav">
     <router-link to="/" class="logo-wrapper">
-      <Icon class="logo" name="whirlpool"></Icon>
+      <d-icon class="logo" name="whirlpool"></d-icon>
     </router-link>
     <div class="menu">
       <a href="https://github.com/DDB324/duoduo-ui-vue3">GitHub</a>
@@ -10,10 +10,10 @@
         <span>文档</span>
       </router-link>
     </div>
-    <Icon v-if="toggleMenuButtonVisible"
+    <d-icon v-if="toggleMenuButtonVisible"
           class="toggleAside"
           @click="toggleAside"
-          name="menu"></Icon>
+          name="menu"></d-icon>
   </div>
 </template>
 

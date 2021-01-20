@@ -3,10 +3,10 @@
 </demo>
 
 <template>
-  <Button @click="onClick">Default Button</Button>
-  <Button theme="main">Primary Button</Button>
-  <Button theme="text">Text Button</Button>
-  <Button theme="link">Link Button</Button>
+  <d-button @click="onClick">Default Button</d-button>
+  <d-button theme="main">Primary Button</d-button>
+  <d-button theme="text">Text Button</d-button>
+  <d-button theme="link">Link Button</d-button>
 </template>
 
 <script lang="ts">

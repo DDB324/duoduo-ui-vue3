@@ -3,7 +3,7 @@
 </demo>
 
 <template>
-  <Button theme="main" @click="showDialog">Open Dialog</Button>
+  <d-button theme="main" @click="showDialog">Open Dialog</d-button>
 </template>
 
 <script lang="ts">

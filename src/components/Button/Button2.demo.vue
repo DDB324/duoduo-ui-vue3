@@ -3,9 +3,9 @@
 </demo>
 
 <template>
-  <Button size="big">Large</Button>
-  <Button theme="text">Default</Button>
-  <Button size="small" theme="link">Small</Button>
+  <d-button size="d-big">Large</d-button>
+  <d-button theme="text">Default</d-button>
+  <d-button size="small" theme="link">Small</d-button>
 </template>
 
 <script lang="ts">

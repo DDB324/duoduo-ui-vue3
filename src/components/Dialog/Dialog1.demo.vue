@@ -3,15 +3,15 @@
 </demo>
 
 <template>
-  <Button @click="toggle" theme="main">Open Dialog</Button>
-  <Dialog v-model:visible="value" :ok="ok" :cancel="cancel" :close-on-click-overlay="false">
+  <d-button @click="toggle" theme="main">Open d-dialog</d-button>
+  <d-dialog v-model:visible="value" :ok="ok" :cancel="cancel" :close-on-click-overlay="false">
     <template v-slot:title>
       <strong>标题支持HTML</strong>
     </template>
     <template v-slot:content>
       <strong>内容支持HTML</strong>
     </template>
-  </Dialog>
+  </d-dialog>
 </template>
 
 <script lang="ts">

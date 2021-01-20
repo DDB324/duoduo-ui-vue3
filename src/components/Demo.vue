@@ -6,12 +6,12 @@
       </div>
       <h3>{{ component.__sourceCodeTitle }}</h3>
       <div class="demo-actions">
-        <Button v-if="codeVisible === 'show'" @click="codeVisible = 'hide'">
+        <d-button v-if="codeVisible === 'show'" @click="codeVisible = 'hide'">
           隐藏代码
-        </Button>
-        <Button theme="main" v-else @click="codeVisible = 'show'">
+        </d-button>
+        <d-button theme="main" v-else @click="codeVisible = 'show'">
           查看代码
-        </Button>
+        </d-button>
       </div>
       <div :class="`demo-code-${codeVisible}`">
         <pre class="language-html"

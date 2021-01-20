@@ -3,7 +3,7 @@
 </demo>
 
 <template>
-  <Button loading>Loading</Button>
+  <d-button loading>Loading</d-button>
 </template>
 
 <script lang="ts">

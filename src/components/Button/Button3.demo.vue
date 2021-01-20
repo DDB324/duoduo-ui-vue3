@@ -3,10 +3,10 @@
 </demo>
 
 <template>
-  <Button level="danger">Default</Button>
-  <Button level="danger" theme="main">Primary</Button>
-  <Button level="danger" theme="text">Text</Button>
-  <Button level="danger" theme="link">Link</Button>
+  <d-button level="danger">Default</d-button>
+  <d-button level="danger" theme="main">Primary</d-button>
+  <d-button level="danger" theme="text">Text</d-button>
+  <d-button level="danger" theme="link">Link</d-button>
 </template>
 
 <script lang="ts">

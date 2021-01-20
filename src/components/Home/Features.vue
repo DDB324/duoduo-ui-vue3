@@ -2,17 +2,17 @@
   <div class="features">
     <ul>
       <li>
-        <Icon name="vue"></Icon>
+        <d-icon name="vue"></d-icon>
         <h3>基于 Vue 3</h3>
         <p>使用了 Vue 3 Composition API</p>
       </li>
       <li>
-        <Icon name="typescript"></Icon>
+        <d-icon name="typescript"></d-icon>
         <h3>基于 TypeScript</h3>
         <p>源代码采用 TypeScript 书写</p>
       </li>
       <li>
-        <Icon name="light"></Icon>
+        <d-icon name="light"></d-icon>
         <h3>代码易读</h3>
         <p>每个组件的源代码都极其简洁</p>
       </li>

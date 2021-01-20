@@ -16,13 +16,13 @@ import {Button, Tabs, Switch, Dialog, openDialog} from "duoduo-ui-vue3"
 
 ```
 <template>
-    <Button>按钮</Button>
+    <d-button>按钮</d-button>
 </template>
 
 <script>
     import {Button} from "duoduo-ui-vue3"
     export default {
-        components: {Button}
+        components: {d-button:Button}
     }
 </script>
 ```

@@ -5,7 +5,7 @@
 <template>
   <ul>
     <li v-for="(name,index) in names" :key="index">
-      <Icon :name="name"></Icon>
+      <d-icon :name="name"></d-icon>
       <span>{{ name }}</span>
     </li>
   </ul>

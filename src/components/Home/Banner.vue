@@ -5,7 +5,7 @@
     <p class="actions">
       <router-link to="/doc">开始</router-link>
       <a href="https://github.com/DDB324/duoduo-ui-vue3">
-        <Icon name="github"></Icon>
+        <d-icon name="github"></d-icon>
         GitHub</a>
     </p>
   </div>

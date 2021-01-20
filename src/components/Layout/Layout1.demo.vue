@@ -3,11 +3,11 @@
 </demo>
 
 <template>
-  <Layout>
-    <Header>header</Header>
-    <Content>content</Content>
-    <Footer>footer</Footer>
-  </Layout>
+  <d-layout>
+    <d-header>header</d-header>
+    <d-content>content</d-content>
+    <d-footer>footer</d-footer>
+  </d-layout>
 </template>
 
 <script lang="ts">

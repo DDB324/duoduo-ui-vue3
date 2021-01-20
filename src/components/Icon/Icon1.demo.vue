@@ -3,7 +3,9 @@
 </demo>
 
 <template>
-  <Icon class="icon" name="auto"/>
+  <d-icon class="icon" name="auto"/>
+  <d-icon class="icon" name="all"/>
+  <d-icon class="icon" name="code"/>
 </template>
 
 <script lang="ts">

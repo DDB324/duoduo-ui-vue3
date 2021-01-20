@@ -3,14 +3,14 @@
 </demo>
 
 <template>
-  <Layout>
-    <Sider>sider</Sider>
-    <Layout>
-      <Header>header</Header>
-      <Content>content</Content>
-      <Footer>footer</Footer>
-    </Layout>
-  </Layout>
+  <d-layout>
+    <d-sider>sider</d-sider>
+    <d-layout>
+      <d-header>header</d-header>
+      <d-content>content</d-content>
+      <d-footer>footer</d-footer>
+    </d-layout>
+  </d-layout>
 </template>
 
 <script lang="ts">

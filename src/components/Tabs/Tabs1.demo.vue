@@ -3,11 +3,11 @@
 </demo>
 
 <template>
-  <Tabs v-model:selected="value">
-    <Tab title="Tab1">Content of Tab1</Tab>
-    <Tab title="Tab2"><strong>Content of Tab2</strong></Tab>
-    <Tab title="Tab3">Content of Tab3</Tab>
-  </Tabs>
+  <d-tabs v-model:selected="value">
+    <d-tab title="Tab1">Content of Tab1</d-tab>
+    <d-tab title="Tab2"><strong>Content of Tab2</strong></d-tab>
+    <d-tab title="Tab3">Content of Tab3</d-tab>
+  </d-tabs>
 </template>
 
 <script lang="ts">
