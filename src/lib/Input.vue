@@ -1,6 +1,11 @@
 <template>
   <label class="wrapper" :class="{error}">
-    <input class="duoduo-input" type="text" :value="value" :disabled="disabled" :readonly="readonly">
+    <input class="duoduo-input" type="text"
+           :value="value"
+           :disabled="disabled"
+           :readonly="readonly"
+           @input="$emit('update:value',$event.target.value)"
+    >
     <template v-if="error">
       <div class="errorMessage">
         <d-icon name="prompt-fill"></d-icon>

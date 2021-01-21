@@ -10,14 +10,16 @@
     </ul>
   </section>
   <Demo :component="Input1Demo"/>
+  <Demo :component="Input2Demo"/>
 </template>
 
 <script lang="ts">
 import Input1Demo from '../Input/Input1.demo.vue';
+import Input2Demo from '../Input/Input2.demo.vue';
 
 export default {
   setup() {
-    return {Input1Demo};
+    return {Input1Demo, Input2Demo};
   },
 };
 </script>
