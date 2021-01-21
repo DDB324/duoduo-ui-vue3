@@ -8,6 +8,7 @@ import TabsDemo from './components/Demo/TabsDemo.vue';
 import Markdown from './components/Markdown.vue';
 import IconDemo from './components/Demo/IconDemo.vue';
 import LayoutDemo from './components/Demo/LayoutDemo.vue';
+import InputDemo from './components/Demo/InputDemo.vue';
 import Intro from './markdown/Intro.md';
 import Install from './markdown/Install.md';
 import GetStarted from './markdown/GetStarted.md';
@@ -22,7 +23,7 @@ export const router = createRouter({
     {path: '/', component: Home},
     {
       path: '/doc', component: Doc, children: [
-        {path: '', redirect:'/doc/intro'},
+        {path: '', redirect: '/doc/intro'},
         {path: 'intro', component: md(Intro)},
         {path: 'get-started', component: md(GetStarted)},
         {path: 'install', component: md(Install)},
@@ -31,7 +32,8 @@ export const router = createRouter({
         {path: 'button', component: ButtonDemo},
         {path: 'dialog', component: DialogDemo},
         {path: 'tabs', component: TabsDemo},
-        {path: 'layout', component: LayoutDemo}
+        {path: 'layout', component: LayoutDemo},
+        {path: 'input', component: InputDemo}
       ]
     }
   ]

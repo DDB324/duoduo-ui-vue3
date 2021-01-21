@@ -5,23 +5,25 @@ import App from './App.vue';
 import {router} from './router';
 import 'github-markdown-css'
 import Demo from './components/Demo.vue';
-import {Button,Switch,Dialog,Tabs,Tab,Icon,
-  Layout,Content,Header,Footer,Sider
-} from './lib/index'
+import {
+  Button, Switch, Dialog, Tabs, Tab, Icon,
+  Layout, Content, Header, Footer, Sider, Input
+} from './lib/index';
 
 
 const app = createApp(App);
 app.use(router);
 app.mount('#app');
-app.component('Button',Button)
 app.component('Demo',Demo)
-app.component('Dialog',Dialog)
-app.component('Tab',Tab)
-app.component('Tabs',Tabs)
-app.component('Icon',Icon)
-app.component('Layout',Layout)
-app.component('Content',Content)
-app.component('Switch',Switch)
-app.component('Header',Header)
-app.component('Footer',Footer)
-app.component('Sider',Sider)
+app.component('d-button',Button)
+app.component('d-dialog',Dialog)
+app.component('d-tab',Tab)
+app.component('d-tabs',Tabs)
+app.component('d-icon',Icon)
+app.component('d-layout',Layout)
+app.component('d-content',Content)
+app.component('d-switch',Switch)
+app.component('d-header',Header)
+app.component('d-footer',Footer)
+app.component('d-sider',Sider)
+app.component('d-input',Input)
