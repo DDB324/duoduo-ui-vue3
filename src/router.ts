@@ -1,6 +1,10 @@
 import {createWebHashHistory, createRouter} from 'vue-router';
 import Home from './views/Home.vue';
 import Doc from './views/Doc.vue';
+import Intro from './markdown/Intro.md';
+import Install from './markdown/Install.md';
+import GetStarted from './markdown/GetStarted.md';
+import {h} from 'vue';
 import SwitchDemo from './components/Demo/SwitchDemo.vue';
 import ButtonDemo from './components/Demo/ButtonDemo.vue';
 import DialogDemo from './components/Demo/DialogDemo.vue';
@@ -9,10 +13,7 @@ import Markdown from './components/Markdown.vue';
 import IconDemo from './components/Demo/IconDemo.vue';
 import LayoutDemo from './components/Demo/LayoutDemo.vue';
 import InputDemo from './components/Demo/InputDemo.vue';
-import Intro from './markdown/Intro.md';
-import Install from './markdown/Install.md';
-import GetStarted from './markdown/GetStarted.md';
-import {h} from 'vue';
+import CollapseDemo from './components/Demo/CollapseDemo.vue';
 
 const md = string => {return h(Markdown, {content: string, key: string});};
 
@@ -33,7 +34,8 @@ export const router = createRouter({
         {path: 'dialog', component: DialogDemo},
         {path: 'tabs', component: TabsDemo},
         {path: 'layout', component: LayoutDemo},
-        {path: 'input', component: InputDemo}
+        {path: 'input', component: InputDemo},
+        {path: 'collapse', component: CollapseDemo},
       ]
     }
   ]

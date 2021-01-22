@@ -7,7 +7,7 @@ import 'github-markdown-css'
 import Demo from './components/Demo.vue';
 import {
   Button, Switch, Dialog, Tabs, Tab, Icon,
-  Layout, Content, Header, Footer, Sider, Input
+  Layout, Content, Header, Footer, Sider, Input, Collapse, CollapseItem
 } from './lib/index';
 
 
@@ -27,3 +27,5 @@ app.component('d-header',Header)
 app.component('d-footer',Footer)
 app.component('d-sider',Sider)
 app.component('d-input',Input)
+app.component('d-collapse',Collapse)
+app.component('d-collapse-item',CollapseItem)
