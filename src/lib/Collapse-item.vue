@@ -1,7 +1,11 @@
 <template>
   <div class="duoduo-collapse-item" :class="{open:currentOpen}">
     <header class="title" @click="toggleOpen">
-      <d-icon name="arrow-right" :class="currentOpen?'collapse-item-svg-bottom':'collapse-item-svg-right'"></d-icon>
+      <d-icon name="arrow-right"
+              :class="currentOpen?
+              'collapse-item-svg-bottom':
+              'collapse-item-svg-right'">
+      </d-icon>
       {{ title }}
     </header>
     <main class="content" v-if="currentOpen">
