@@ -14,8 +14,13 @@ export default {
       type: Array,
       default: []
     },
+    single: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, context) {
+    const {activeName, single} = props;
     //创建eventBus实例
     const eventBus = new EventBus();
     //使用provide
@@ -23,7 +28,7 @@ export default {
 
     onMounted(() => {
       //不能修改props,所以用JSON深拷贝
-      let copyActiveName = JSON.parse(JSON.stringify(props.activeName));
+      let copyActiveName = JSON.parse(JSON.stringify(activeName));
 
       //触发activeName的更新函数,使组件外部能拿到数据
       let updateActiveName = () => {
@@ -34,11 +39,11 @@ export default {
       };
 
       //第一次触发事件总线的activeName函数,使collapse-items判断是否打开
-      eventBus.emit('update:activeName', props.activeName);
+      eventBus.emit('update:activeName', activeName);
 
       //事件总线监听addActiveName事件来更新activeName的数据
       eventBus.on('update:addActiveName', (name) => {
-        copyActiveName.push(name);
+        single ? copyActiveName = [name] : copyActiveName.push(name);
         updateActiveName();
       });
 
