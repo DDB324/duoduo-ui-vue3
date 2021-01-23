@@ -7,6 +7,9 @@
           <router-link to="/doc/intro">介绍</router-link>
         </li>
         <li>
+          <router-link to="/doc/note">笔记和源码</router-link>
+        </li>
+        <li>
           <router-link to="/doc/install">安装</router-link>
         </li>
         <li>
@@ -26,6 +29,9 @@
         </li>
         <li>
           <router-link to="/doc/button">Button 按钮</router-link>
+        </li>
+        <li>
+          <router-link to="/doc/eventBus">EventBus 事件总线</router-link>
         </li>
       </ol>
       <h2>组件</h2>
@@ -67,11 +73,11 @@ export default {
 }
 
 .bounce-enter-active {
-  animation: bounce-in .8s;
+  animation: bounce-in .3s;
 }
 
 .bounce-leave-active {
-  animation: bounce-in .8s reverse;
+  animation: bounce-in .3s reverse;
 }
 
 @keyframes bounce-in {
@@ -123,7 +129,7 @@ aside {
           display: inline-block;
           transform: scale3d(0, 1, 1);
           transform-origin: left;
-          transition: all 0.5s;
+          transition: all 0.3s;
         }
 
         &:hover:after {

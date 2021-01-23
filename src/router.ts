@@ -4,6 +4,8 @@ import Doc from './views/Doc.vue';
 import Intro from './markdown/Intro.md';
 import Install from './markdown/Install.md';
 import GetStarted from './markdown/GetStarted.md';
+import Note from './markdown/Note.md';
+import EventBus from './markdown/EventBus.md';
 import {h} from 'vue';
 import SwitchDemo from './components/Demo/SwitchDemo.vue';
 import ButtonDemo from './components/Demo/ButtonDemo.vue';
@@ -28,6 +30,8 @@ export const router = createRouter({
         {path: 'intro', component: md(Intro)},
         {path: 'get-started', component: md(GetStarted)},
         {path: 'install', component: md(Install)},
+        {path: 'note', component: md(Note)},
+        {path: 'eventBus', component: md(EventBus)},
         {path: 'switch', component: SwitchDemo},
         {path: 'icon', component: IconDemo},
         {path: 'button', component: ButtonDemo},
