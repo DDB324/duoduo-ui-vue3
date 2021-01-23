@@ -1,17 +1,16 @@
-// eventBus.js
 export default class EventBus{
   events:Object;
   constructor(){
     this.events = {};
   }
-  emit(eventName, data) {
+  emit(eventName: string, data: any) {
     if (this.events[eventName]) {
       this.events[eventName].forEach(function(fn) {
         fn(data);
       });
     }
   }
-  on(eventName, fn) {
+  on(eventName:string, fn) {
     this.events[eventName] = this.events[eventName] || [];
     this.events[eventName].push(fn);
   }

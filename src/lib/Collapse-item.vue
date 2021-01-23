@@ -1,21 +1,22 @@
 <template>
-  <div class="duoduo-collapse-item" :class="{open:currentOpen}">
+  <div class="duoduo-collapse-item" :class="{open:open}">
     <header class="title" @click="toggleOpen">
       <d-icon name="arrow-right"
-              :class="currentOpen?
+              :class="open?
               'collapse-item-svg-bottom':
               'collapse-item-svg-right'">
       </d-icon>
       {{ title }}
     </header>
-    <main class="content" v-if="currentOpen">
+    <main class="content" v-if="open">
       <slot></slot>
     </main>
   </div>
 </template>
 
 <script lang='ts'>
-import {ref} from 'vue';
+import {ref, inject} from 'vue';
+import {EventBus} from './index';
 
 export default {
   props: {
@@ -23,13 +24,32 @@ export default {
       type: String,
       require: true
     },
+    name: {
+      type: String,
+      require: true
+    }
   },
   setup(props) {
-    const currentOpen = ref(true);
+    //注入事件总线
+    const eventBus: EventBus = inject('eventBus');
+
+    const open = ref(false);
+    const {name} = props;
     const toggleOpen = () => {
-      currentOpen.value = !currentOpen.value;
+      //子组件自己不控制开启和关闭,将信息通知给事件总线,然后父组件监听这个事件
+      //让父组件来控制子组件的开启和关闭
+      if (open.value) {
+        eventBus.emit('update:removeActiveName', name);
+      } else {
+        eventBus.emit('update:addActiveName', name);
+      }
     };
-    return {toggleOpen, currentOpen};
+
+    //监听事件总线的activeName更新事件,觉得自己是开启还是关闭
+    eventBus.on('update:activeName', (names) => {
+      open.value = names.indexOf(name) >= 0;
+    });
+    return {toggleOpen, open};
   }
 };
 </script>
